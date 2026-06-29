@@ -2,36 +2,344 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>KAY2 — AI builder for hire</title>
-<meta name="description" content="Independent AI builder. Autonomous agents, web3, security, and full-stack products — shipped to production." />
+<meta name="description" content="Independent AI builder. Autonomous agents, web3, security, and full-stack products — designed, built and shipped to production. ~50 projects shipped, live demos you can click. Available for part-time & contract work." />
 <meta name="theme-color" content="#0a0a0b" />
+<meta name="color-scheme" content="dark" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="KAY2 — AI builder for hire" />
+<meta property="og:description" content="Autonomous agents, web3, security, and full-stack products — shipped to production fast. Available for part-time & contract work." />
+<meta property="og:url" content="https://kay2.trailos.uk" />
+<meta property="og:image" content="https://kay2.trailos.uk/brand/kay2-pfp.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://kay2.trailos.uk/brand/kay2-pfp.png" />
+<link rel="canonical" href="https://kay2.trailos.uk" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0b'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%23c6ff3a'%3EK2%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
-:root{--bg:#0a0a0b;--text:#f2f2f4;--muted:#a6a7ae;--accent:#c6ff3a;--mono:ui-monospace,monospace;--sans:system-ui,sans-serif}
+:root{
+  --bg:#0a0a0b;--bg-2:#0f1011;--card:#121315;--card-hi:#16181b;
+  --line:#23252a;--text:#f2f2f4;--muted:#a6a7ae;--faint:#8a8c95;
+  --accent:#c6ff3a;--accent-dim:#9bcf1f;--accent-ink:#0a0a0b;--warn:#ffb627;
+  --live:#3ddc84;--radius:14px;--maxw:1080px;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;padding:48px 24px;max-width:720px;margin:0 auto}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(900px 500px at 80% -10%,rgba(198,255,58,.07),transparent 60%),
+  repeating-linear-gradient(to right,rgba(255,255,255,.018) 0 1px,transparent 1px 40px),
+  repeating-linear-gradient(to bottom,rgba(255,255,255,.018) 0 1px,transparent 1px 40px);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
 .mono{font-family:var(--mono)}
-h1{font-size:2rem;margin:16px 0 8px}
-h1 span{color:var(--accent)}
-p{color:var(--muted);margin:12px 0}
-a{color:var(--accent)}
-ul{margin:16px 0 0 20px;color:var(--muted)}
-li{margin:8px 0}
-.notice{margin-top:32px;padding:16px;border:1px solid #23252a;border-radius:12px;font-size:14px;color:var(--muted)}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--accent-dim);text-transform:lowercase}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:200;transition:width .1s linear}
+nav{position:sticky;top:0;z-index:90;backdrop-filter:blur(10px);background:rgba(10,10,11,.78);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;position:relative}
+.brand{font-family:var(--mono);font-weight:700;font-size:18px;letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.brand .dot{color:var(--accent)}
+.navlinks{display:flex;gap:26px;font-size:14px;align-items:center}
+.navlinks a{color:var(--muted);transition:color .15s}
+.navlinks a:hover{color:var(--text)}
+.navlinks .hire{color:var(--accent-ink);background:var(--accent);padding:7px 14px;border-radius:8px;font-weight:600}
+.navlinks .hire:hover{background:#d4ff5e}
+.menu-toggle{display:none;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 11px;font-size:16px;cursor:pointer;font-family:var(--mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+@media(max-width:640px){
+  .menu-toggle{display:block}
+  .navlinks{position:absolute;top:60px;right:0;left:0;flex-direction:column;align-items:stretch;background:var(--bg-2);border-bottom:1px solid var(--line);padding:14px 22px;gap:16px;display:none}
+  .navlinks.open{display:flex}
+  .navlinks .hire{text-align:center}
+}
+header{padding:84px 0 60px}
+.prompt{font-family:var(--mono);font-size:14px;color:var(--faint);margin-bottom:22px}
+.prompt b{color:var(--accent);font-weight:500}
+.cursor{display:inline-block;width:9px;height:17px;background:var(--accent);margin-left:3px;vertical-align:-2px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font-size:clamp(34px,7vw,62px);line-height:1.04;font-weight:700;letter-spacing:-.02em;max-width:15ch}
+h1 .hl{color:var(--accent)}
+.sub{margin-top:22px;font-size:clamp(16px,2.4vw,19px);color:var(--muted);max-width:56ch}
+.sec{padding:72px 0;border-top:1px solid var(--line)}
+.sec h2{font-size:clamp(26px,4vw,36px);font-weight:700;letter-spacing:-.02em;margin-top:10px}
+.sec .lead{color:var(--muted);margin-top:14px;max-width:62ch;font-size:16px}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+@media(max-width:860px){.lanes{grid-template-columns:1fr}}
+.lane{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .15s,transform .12s}
+.lane:hover{border-color:var(--accent-dim);transform:translateY(-2px)}
+.lane .tag{font-family:var(--mono);font-size:11px;color:var(--accent-dim);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.lane h3{font-size:18px;margin-bottom:10px}
+.lane p{color:var(--muted);font-size:14.5px}
+.lane.wide{grid-column:1/-1}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.filters button{font-family:var(--mono);font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;transition:all .15s}
+.filters button:hover,.filters button.active{border-color:var(--accent-dim);color:var(--text);background:rgba(198,255,58,.08)}
+.filters button.active{color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:12px;transition:border-color .15s,transform .12s}
+.card:hover{border-color:#3a3d44;transform:translateY(-2px)}
+.card.private{opacity:.92}
+.card-head{display:flex;align-items:flex-start;gap:14px}
+.card-head img{width:44px;height:44px;border-radius:10px;flex:none;object-fit:cover;background:var(--bg-2)}
+.card-head .icon{width:44px;height:44px;border-radius:10px;flex:none;display:grid;place-items:center;background:rgba(198,255,58,.08);border:1px solid var(--line);font-size:20px}
+.card-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-title h3{font-size:17px;font-weight:600}
+.status{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;display:inline-flex;align-items:center;gap:5px}
+.status.live{background:rgba(61,220,132,.12);color:var(--live)}
+.status.live .dot{width:6px;height:6px;border-radius:50%;background:var(--live);box-shadow:0 0 6px var(--live)}
+.status.case{background:rgba(255,182,39,.12);color:var(--warn)}
+.status.private-tag{background:rgba(166,167,174,.12);color:var(--muted)}
+.card p{color:var(--muted);font-size:14.5px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font-family:var(--mono);font-size:10.5px;padding:4px 8px;border-radius:6px;background:var(--bg-2);border:1px solid var(--line);color:var(--faint)}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
+.card-foot a{font-family:var(--mono);font-size:12px;color:var(--accent-dim)}
+.card-foot a:hover{color:var(--accent)}
+.empty{text-align:center;color:var(--muted);padding:48px 20px;font-family:var(--mono);font-size:14px;display:none}
+.empty.show{display:block}
+.stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.stack span{font-family:var(--mono);font-size:12px;padding:8px 14px;border-radius:8px;background:var(--card);border:1px solid var(--line);color:var(--muted)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+@media(max-width:860px){.why{grid-template-columns:1fr}}
+.why .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.why h3{font-size:17px;margin-bottom:10px}
+.why p{color:var(--muted);font-size:14.5px}
+.cta{text-align:center;padding:80px 0 100px}
+.cta h2{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.02em}
+.cta p{color:var(--muted);margin:16px auto 28px;max-width:48ch}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);cursor:pointer;background:var(--card);color:var(--text);transition:transform .12s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:hover{background:#d4ff5e}
+.float-hire{position:fixed;bottom:22px;right:22px;z-index:100;background:var(--accent);color:var(--accent-ink);font-family:var(--mono);font-weight:700;font-size:13px;padding:12px 18px;border-radius:999px;border:0;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .15s;display:none}
+.float-hire.show{display:block}
+.float-hire:hover{transform:translateY(-2px)}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--card-hi);border:1px solid var(--line);padding:10px 18px;border-radius:8px;font-family:var(--mono);font-size:13px;opacity:0;pointer-events:none;transition:all .25s;z-index:200}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
-<p class="mono">kay2@portfolio:~$ deploy --status</p>
-<h1>KAY2 <span>▸</span> AI builder</h1>
-<p>Site deployed from GitHub via Cloudflare Workers. If you see this page, the deploy pipeline works — replace <code class="mono">public/index.html</code> with your full portfolio from the Pi.</p>
-<ul>
-  <li><a href="https://synpolis.trailos.uk">SynPolis</a></li>
-  <li><a href="https://range.trailos.uk">Nullrange</a></li>
-  <li><a href="https://blue.trailos.uk">Bluerange</a></li>
-  <li><a href="https://github.com/kay2stack">GitHub</a></li>
-</ul>
-<p><a href="mailto:kay2studiosxyz@gmail.com">kay2studiosxyz@gmail.com</a> · Open to part-time &amp; contract</p>
-<div class="notice"><strong class="mono">Pi sync:</strong> copy your real <code class="mono">index.html</code> (and <code class="mono">brand/</code> folder if separate) into <code class="mono">public/</code> on this repo, then push to <code class="mono">main</code>.</div>
+<div id="progress"></div>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><span class="dot">▸</span> KAY2</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#why">Why me</a>
+      <a href="#contact" class="hire">Hire me</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap">
+  <div class="prompt">kay2@portfolio:~$ whoami<span class="cursor"></span></div>
+  <h1>AI builder <span class="hl">for hire</span></h1>
+  <p class="sub">Autonomous agents, web3, security, and full-stack — I take ideas to live, working software on real infrastructure. ~50 projects shipped. Open to part-time &amp; contract.</p>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="label">// what you can hire me for</div>
+    <h2>Four things I ship well</h2>
+    <p class="lead">Pick a problem. I take it from idea to a deployed, working product — on real infrastructure, end to end.</p>
+    <div class="lanes">
+      <div class="lane"><div class="tag">[ ai_agents ]</div><h3>AI agents &amp; automation</h3><p>Autonomous agents, LLM tooling, multi-model pipelines with fallback, RAG, and Telegram/Discord bots. Built on Claude &amp; OpenAI. Agents that actually do work, not demos.</p></div>
+      <div class="lane"><div class="tag">[ web3 ]</div><h3>Web3 &amp; on-chain</h3><p>Solana trading systems, pump.fun &amp; Polymarket bots, token tooling, and on-chain game economies. Pseudonymous-friendly, paid in fiat or crypto.</p></div>
+      <div class="lane"><div class="tag">[ fullstack ]</div><h3>Full-stack &amp; PWAs</h3><p>Production apps on Cloudflare Workers — D1, KV, R2, Durable Objects. Offline-first PWAs, real-time multiplayer, Android via Capacitor.</p></div>
+      <div class="lane wide"><div class="tag">[ security ]</div><h3>Cybersecurity &amp; education</h3><p>Hands-on training ranges, in-browser terminal &amp; labs, CTF missions, blue-team SOC sims, and structured learning tracks — browser-first, no install.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="label">// selected work</div>
+    <h2>Live in production</h2>
+    <p class="lead">A slice of ~50 shipped projects. Green dot = a live health check passing right now. Private systems show as case studies — full demos on request.</p>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">no projects in this filter.</div>
+  </div>
+</section>
+
+<section class="sec" id="stack">
+  <div class="wrap">
+    <div class="label">// stack</div>
+    <h2>What I build with</h2>
+    <p class="lead">Edge-first. Everything below is in something I've shipped — not a wishlist.</p>
+    <div class="stack">
+      <span>TypeScript</span><span>JavaScript</span><span>Python</span><span>Cloudflare Workers</span>
+      <span>Durable Objects</span><span>D1</span><span>KV</span><span>R2</span><span>React</span>
+      <span>PWA / Service Workers</span><span>Node.js</span><span>Claude / Anthropic SDK</span>
+      <span>OpenAI</span><span>RAG</span><span>Solana / web3.js</span><span>Telegram Bot API</span>
+      <span>Capacitor / Android</span><span>Wrangler / CI deploy</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="label">// why me</div>
+    <h2>One builder, the whole pipeline</h2>
+    <div class="why">
+      <div class="box"><h3>Ships, doesn't stall</h3><p>I work in days, not quarters. ~50 projects went from idea to live URL. Momentum is the product.</p></div>
+      <div class="box"><h3>Production, not slides</h3><p>Real infra, real users, real-money systems. If it's on here, you can use it right now.</p></div>
+      <div class="box"><h3>End to end, solo</h3><p>Design, build, deploy, and run it. No handoffs, no overhead — you talk to the person doing the work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="label">// let's build</div>
+    <h2>Got something that needs shipping?</h2>
+    <p>Open to part-time &amp; contract work — AI agents, web3, security, or full-stack. Fiat or crypto.</p>
+    <div class="cta-btns">
+      <button class="btn primary" id="copyEmail">📋 kay2studiosxyz@gmail.com</button>
+      <a class="btn" href="mailto:kay2studiosxyz@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/kay2stack" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<button class="float-hire" id="floatHire">Hire me →</button>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+const PROJECTS=[
+  {name:"SynPolis",url:"https://synpolis.trailos.uk",icon:"/icons/synpolis.svg",live:true,tags:["ai","web3","fullstack"],
+   desc:"An autonomous AI agent city. A fleet of LLM agents earn standing, run an economy, and build real websites & games inside the world — multiplayer, persistent, on the edge.",
+   tech:["Workers","Durable Objects","KV","multi-agent"]},
+  {name:"Nullrange",url:"https://range.trailos.uk",icon:"/icons/nullrange.png",live:true,tags:["security","fullstack","ai"],
+   desc:"In-browser cybersecurity learning range — TryHackMe-style missions, pentest target machines, cipher lab & built-in terminal, 14+ structured tracks. AI target forge, no install.",
+   tech:["Workers","terminal","education","AI"]},
+  {name:"Bluerange",url:"https://blue.trailos.uk",icon:"/icons/bluerange.png",live:true,tags:["security","fullstack"],
+   desc:"Hands-on blue-team defence training — SOC triage queue, incident-response playbooks, detection lessons. Browser-first companion to Nullrange.",
+   tech:["Workers","blue team","education"]},
+  {name:"Nexora",live:false,private:true,tags:["ai","fullstack"],
+   desc:"No-code AI agent builder — design an agent visually, train it on your docs, then deploy to Telegram, a web widget, a hosted page, or a REST API. D1 + KV, managed credits.",
+   tech:["Workers","D1","KV","AI"]},
+  {name:"Clive",live:false,private:true,tags:["ai","web3"],
+   desc:"An autonomous AI crypto-trading agent. Telegram-native, multi-model with fallback, trading across Solana / pump.fun / Polymarket. Real money, real-time, runs 24/7.",
+   tech:["Telegram","Solana","multi-model"]},
+  {name:"DroidLoop",live:false,private:true,tags:["ai"],
+   desc:"LLM-driven Android control over ADB — an agent that operates a real phone: reads the screen, taps, types, completes tasks. AI agency on physical hardware.",
+   tech:["ADB","Android","LLM"]},
+  {name:"Six Stacks",url:"https://sixstacks.trailos.uk",icon:"/icons/sixstacks.svg",live:true,tags:["fullstack"],
+   desc:"A live-data product tracking the GTA VI creator economy — real Steam & market stats, served from a single Worker with its own tiny API and cron jobs.",
+   tech:["Workers","live API","cron"]},
+  {name:"TrailOS",url:"https://trailos.uk",icon:"/icons/trailos.png",live:true,tags:["fullstack"],
+   desc:"An offline-first companion PWA for the New Forest — installable, works with no signal, full app polish. Demonstrates real PWA craft end to end.",
+   tech:["PWA","offline","Workers"]},
+  {name:"PaddleZ",url:"https://paddles.trailos.uk",icon:"/icons/paddlez.png",live:true,tags:["fullstack"],
+   desc:"Real-time paddleboarding conditions — live tide & weather APIs, web-push alerts, and a daily cron forecast, all from one same-origin Worker.",
+   tech:["Workers","web push","KV"]},
+  {name:"Chromebook Playbook",url:"https://chromebook.trailos.uk",icon:"/icons/chromebook.png",live:true,tags:["fullstack","ai"],
+   desc:"A power-user reference PWA for shipping real software from a Chromebook — AI, agents, the Claude SDK, CLI, SSH and deploy, all in one place.",
+   tech:["PWA","reference","Workers"]},
+  {name:"Stan Chat",url:"https://stanchat.uk",icon:"/icons/stanchat.png",live:true,tags:["fullstack","ai"],
+   desc:"Product & landing page for a mobile cockpit that drives Claude Code from your phone — design, copy and marketing polish, shipped on its own domain.",
+   tech:["Workers","product","design"]}
+];
+const FILTERS=["all","live","case study","ai","web3","security","fullstack"];
+let activeFilter="all";
+const health={};
+
+function $(s){return document.querySelector(s)}
+function el(tag,attrs={},html){const e=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(html)e.innerHTML=html;return e}
+
+function matchFilter(p){
+  if(activeFilter==="all")return true;
+  if(activeFilter==="live")return p.live;
+  if(activeFilter==="case study")return p.private;
+  if(activeFilter==="ai")return p.tags.includes("ai");
+  if(activeFilter==="web3")return p.tags.includes("web3");
+  if(activeFilter==="security")return p.tags.includes("security");
+  if(activeFilter==="fullstack")return p.tags.includes("fullstack");
+  return true;
+}
+
+function renderFilters(){
+  const box=$("#filters");box.innerHTML="";
+  FILTERS.forEach(f=>{
+    const b=el("button",{type:"button"},f==="live"?"● Live":f==="all"?"All":f);
+    if(f===activeFilter)b.classList.add("active");
+    b.onclick=()=>{activeFilter=f;renderFilters();renderGrid()};
+    box.append(b);
+  });
+}
+
+function renderGrid(){
+  const grid=$("#grid");grid.innerHTML="";
+  const items=PROJECTS.filter(matchFilter);
+  $("#empty").classList.toggle("show",!items.length);
+  items.forEach(p=>{
+    const card=el("article",{class:"card"+(p.private?" private":"")});
+    const head=el("div",{class:"card-head"});
+    if(p.icon)head.append(el("img",{src:p.icon,alt:"",width:"44",height:"44"}));
+    else head.append(el("div",{class:"icon"},p.private?"🔒":"◆"));
+    const meta=el("div");
+    const title=el("div",{class:"card-title"});
+    title.append(el("h3",{},p.name));
+    if(p.live&&p.url){
+      const st=el("span",{class:"status live"});
+      st.append(el("span",{class:"dot"}));
+      st.append(document.createTextNode(health[p.url]===false?"checking…":"live"));
+      title.append(st);
+    }else if(p.private){
+      title.append(el("span",{class:"status private-tag"},"🔒 private"));
+    }
+    meta.append(title);
+    head.append(meta);
+    card.append(head);
+    card.append(el("p",{},p.desc));
+    const tags=el("div",{class:"tags"});
+    p.tech.forEach(t=>tags.append(el("span",{},t)));
+    card.append(tags);
+    const foot=el("div",{class:"card-foot"});
+    if(p.url){
+      const host=p.url.replace(/^https?:\/\//,"");
+      foot.append(el("a",{href:p.url,target:"_blank",rel:"noopener"},"open "+host+" ↗"));
+    }else foot.append(el("span",{class:"mono",style:"font-size:12px;color:var(--faint)"},"case study · demo on request"));
+    card.append(foot);
+    grid.append(card);
+  });
+}
+
+async function checkHealth(){
+  await Promise.all(PROJECTS.filter(p=>p.url).map(async p=>{
+    try{
+      const r=await fetch(p.url,{mode:"no-cors",cache:"no-store"});
+      health[p.url]=true;
+    }catch{health[p.url]=false}
+    // no-cors opaque = still means reachable
+    if(health[p.url]===undefined)health[p.url]=true;
+  }));
+  renderGrid();
+}
+
+renderFilters();renderGrid();checkHealth();
+
+$("#menuBtn").onclick=()=>$("#navlinks").classList.toggle("open");
+$("#copyEmail").onclick=async()=>{
+  try{await navigator.clipboard.writeText("kay2studiosxyz@gmail.com")}catch{}
+  $("#toast").classList.add("show");
+  setTimeout(()=>$("#toast").classList.remove("show"),1800);
+};
+$("#floatHire").onclick=()=>location.href="mailto:kay2studiosxyz@gmail.com";
+window.onscroll=()=>{
+  const h=document.documentElement;
+  $("#progress").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+  $("#floatHire").classList.toggle("show",window.scrollY>400);
+};
+</script>
 </body>
 </html>

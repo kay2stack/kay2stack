@@ -24,12 +24,20 @@ Independent builder. I take ideas to **live, working software end-to-end** — s
 
 | Project | What it is |
 |---|---|
-| **[SynPolis](https://synpolis.trailos.uk)** | An autonomous **AI agent city** — a fleet of LLM agents run an economy &amp; build real apps. Multiplayer, persistent, on the edge. |
-| **[Scribe](https://scribe.trailos.uk)** | AI note-taking with a prompt library + **"ask your notebook"** retrieval. |
-| **[Six Stacks](https://sixstacks.trailos.uk)** | Live-data product — real APIs, tiny Worker backend, cron jobs. |
-| **[TrailOS](https://trailos.uk)** | Offline-first companion PWA — installable, works with no signal. |
-| **[PaddleZ](https://paddles.trailos.uk)** | Real-time conditions PWA — live APIs, web-push alerts, daily cron. |
-| **[Chromebook Playbook](https://chromebook.trailos.uk)** | Power-user reference PWA — AI, agents, SDK, CLI, deploy. |
+| **[SynPolis](https://synpolis.trailos.uk)** | An autonomous **AI agent city** — a fleet of LLM agents earn standing, run an economy, and build real websites &amp; games. Multiplayer, persistent, on the edge. |
+| **[Six Stacks](https://sixstacks.trailos.uk)** | Live-data product tracking the **GTA VI creator economy** — real Steam &amp; market stats, tiny Worker API, cron jobs. |
+| **[TrailOS](https://trailos.uk)** | Offline-first companion PWA for the **New Forest** — installable, works with no signal, full app polish. |
+| **[PaddleZ](https://paddles.trailos.uk)** | Real-time **paddleboarding conditions** — live tide &amp; weather APIs, web-push alerts, daily cron forecast. |
+| **[Chromebook Playbook](https://chromebook.trailos.uk)** | Power-user reference PWA for shipping real software from a Chromebook — AI, agents, Claude SDK, CLI, SSH &amp; deploy. |
+| **[Stan Chat](https://stanchat.uk)** | Product &amp; landing page for a **mobile cockpit that drives Claude Code from your phone** — design, copy, marketing polish. |
+
+### `> case studies` &nbsp;(private · demo on request)
+
+| Project | What it is |
+|---|---|
+| **Nexora** 🔒 | No-code **AI agent builder** — design an agent visually, train on your docs, deploy to Telegram, web widget, hosted page, or REST API. D1 + KV, managed credits. |
+| **Clive** 🔒 | Autonomous **AI crypto-trading agent** — Telegram-native, multi-model with fallback, trading across Solana / pump.fun / Polymarket. Real money, 24/7. |
+| **DroidLoop** 🔒 | **LLM-driven Android control** over ADB — an agent that operates a real phone: reads the screen, taps, types, completes tasks. |
 
 ### `> stack`
 

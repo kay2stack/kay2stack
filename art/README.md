@@ -14,4 +14,4 @@ Brand art pulled from live portfolio sites for use in the GitHub profile README 
 | `chromebook/` | [chromebook.trailos.uk](https://chromebook.trailos.uk) | `icon-192.png` |
 | `stanchat/` | [stanchat.uk](https://stanchat.uk) | `stan-icon.png`, `og.png` |
 
-SVG mascots (`nyx-mascot.svg`, `sentinel-avatar.svg`) were extracted from inline site markup. The Nullrange terminal uses the crosshair favicon as its brand mark — see `nullrange/favicon.svg`.
+SVG mascots (`nyx-mascot.svg`, `sentinel-avatar.svg`) were extracted from inline site markup. The Nullrange terminal uses the crosshair favicon as its brand mark; see `nullrange/favicon.svg`.

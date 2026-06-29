@@ -4,7 +4,7 @@ Cloudflare Workers runs `npx wrangler deploy` on every push to `main`.
 
 ## Why the first deploy failed
 
-GitHub only had `README.md` — no `wrangler.toml`, no `package.json`, and no site files under `public/`. Wrangler had nothing to deploy.
+GitHub only had `README.md`: no `wrangler.toml`, no `package.json`, and no site files under `public/`. Wrangler had nothing to deploy.
 
 This branch adds the missing scaffold.
 
@@ -44,7 +44,7 @@ Cloudflare will rebuild automatically.
 
 ## Worker name
 
-`wrangler.toml` uses `name = "kay2"`. If your Pi uses a different worker name, update it to match — otherwise Cloudflare may create a new Worker instead of updating the existing one.
+`wrangler.toml` uses `name = "kay2"`. If your Pi uses a different worker name, update it to match; otherwise Cloudflare may create a new Worker instead of updating the existing one.
 
 Check on the Pi:
 

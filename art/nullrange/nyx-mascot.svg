@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 124" aria-hidden="true">
+  <line x1="60" y1="30" x2="60" y2="17" stroke="#22e3c0" stroke-width="2.5"/>
+  <circle cx="60" cy="13" r="3.6" fill="#22e3c0"/>
+  <rect x="22" y="30" width="76" height="60" rx="13" fill="#0a0d11" stroke="#22e3c0" stroke-width="2.6"/>
+  <rect x="22" y="30" width="76" height="60" rx="13" fill="url(#ng)" opacity=".18"/>
+  <g>
+    <circle cx="45" cy="56" r="8.5" fill="none" stroke="#22e3c0" stroke-width="2"/>
+    <circle cx="45" cy="56" r="2.2" fill="#7cf0dc"/>
+    <circle cx="75" cy="56" r="8.5" fill="none" stroke="#22e3c0" stroke-width="2"/>
+    <circle cx="75" cy="56" r="2.2" fill="#7cf0dc"/>
+  </g>
+  <rect x="50" y="74" width="20" height="6" rx="2" fill="#22e3c0"/>
+  <line x1="40" y1="90" x2="40" y2="99" stroke="#22e3c0" stroke-width="2.6"/>
+  <line x1="80" y1="90" x2="80" y2="99" stroke="#22e3c0" stroke-width="2.6"/>
+  <defs>
+    <linearGradient id="ng" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22e3c0"/>
+      <stop offset="1" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+</svg>

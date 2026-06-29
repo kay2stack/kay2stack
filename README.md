@@ -1,5 +1,9 @@
 <h1 align="center">KAY2 ▸ AI builder</h1>
 
+<p align="center">
+  <img src="art/kay2/kay2-pfp.png" width="120" alt="KAY2" />
+</p>
+
 <p align="center">Autonomous agents · web3 · security · full-stack — shipped to production, <em>fast</em>.</p>
 
 <p align="center">
@@ -23,16 +27,20 @@ Independent builder. I take ideas to **live, working software end-to-end** — s
 
 ### `> live in production` &nbsp;(click any)
 
-| Project | What it is |
-|---|---|
-| **[SynPolis](https://synpolis.trailos.uk)** | An autonomous **AI agent city** — a fleet of LLM agents earn standing, run an economy, and build real websites &amp; games. Multiplayer, persistent, on the edge. |
-| **[Nullrange](https://range.trailos.uk)** | In-browser **cybersecurity learning range** — TryHackMe-style missions, pentest target machines, cipher lab &amp; **built-in terminal**, 14+ structured tracks. AI target forge, no install. |
-| **[Bluerange](https://blue.trailos.uk)** | Hands-on **blue-team defence** training — SOC triage queue, incident-response playbooks, detection lessons. Browser-first companion to Nullrange. |
-| **[Six Stacks](https://sixstacks.trailos.uk)** | Live-data product tracking the **GTA VI creator economy** — real Steam &amp; market stats, tiny Worker API, cron jobs. |
-| **[TrailOS](https://trailos.uk)** | Offline-first companion PWA for the **New Forest** — installable, works with no signal, full app polish. |
-| **[PaddleZ](https://paddles.trailos.uk)** | Real-time **paddleboarding conditions** — live tide &amp; weather APIs, web-push alerts, daily cron forecast. |
-| **[Chromebook Playbook](https://chromebook.trailos.uk)** | Power-user reference PWA for shipping real software from a Chromebook — AI, agents, Claude SDK, CLI, SSH &amp; deploy. |
-| **[Stan Chat](https://stanchat.uk)** | Product &amp; landing page for a **mobile cockpit that drives Claude Code from your phone** — design, copy, marketing polish. |
+<p align="center">
+  <a href="https://range.trailos.uk"><img src="art/nullrange/og.png" width="720" alt="Nullrange — browser cyber range" /></a>
+</p>
+
+| | Project | What it is |
+|:---:|:---|:---|
+| <img src="art/synpolis/icon.svg" width="40" alt="" /> | **[SynPolis](https://synpolis.trailos.uk)** | An autonomous **AI agent city** — a fleet of LLM agents earn standing, run an economy, and build real websites &amp; games. Multiplayer, persistent, on the edge. |
+| <img src="art/nullrange/icon-192.png" width="40" alt="" /> | **[Nullrange](https://range.trailos.uk)** | In-browser **cybersecurity learning range** — TryHackMe-style missions, pentest target machines, cipher lab &amp; **built-in terminal**, 14+ structured tracks. AI target forge, no install. |
+| <img src="art/bluerange/icon-192.png" width="40" alt="" /> | **[Bluerange](https://blue.trailos.uk)** | Hands-on **blue-team defence** training — SOC triage queue, incident-response playbooks, detection lessons. Browser-first companion to Nullrange. |
+| <img src="art/sixstacks/icon.svg" width="40" alt="" /> | **[Six Stacks](https://sixstacks.trailos.uk)** | Live-data product tracking the **GTA VI creator economy** — real Steam &amp; market stats, tiny Worker API, cron jobs. |
+| <img src="art/trailos/icon-192.png" width="40" alt="" /> | **[TrailOS](https://trailos.uk)** | Offline-first companion PWA for the **New Forest** — installable, works with no signal, full app polish. |
+| <img src="art/paddlez/icon-192.png" width="40" alt="" /> | **[PaddleZ](https://paddles.trailos.uk)** | Real-time **paddleboarding conditions** — live tide &amp; weather APIs, web-push alerts, daily cron forecast. |
+| <img src="art/chromebook/icon-192.png" width="40" alt="" /> | **[Chromebook Playbook](https://chromebook.trailos.uk)** | Power-user reference PWA for shipping real software from a Chromebook — AI, agents, Claude SDK, CLI, SSH &amp; deploy. |
+| <img src="art/stanchat/stan-icon.png" width="40" alt="" /> | **[Stan Chat](https://stanchat.uk)** | Product &amp; landing page for a **mobile cockpit that drives Claude Code from your phone** — design, copy, marketing polish. |
 
 ### `> case studies` &nbsp;(private · demo on request)
 

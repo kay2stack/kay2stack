@@ -1,6 +1,7 @@
 name = "kay2"
 main = "src/worker.js"
 compatibility_date = "2024-11-01"
+account_id = "c8e6201c25671c6eb7c2cea44c81fcb0"
 
 [assets]
 directory = "./public"

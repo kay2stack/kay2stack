@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#241a44"/>
+      <stop offset="60%" stop-color="#11111f"/>
+      <stop offset="100%" stop-color="#07070f"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe39a"/>
+      <stop offset="100%" stop-color="#e0a93b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- grace halo (cyan) top-left, notoriety ember (red) bottom-right: the two axes -->
+  <circle cx="150" cy="140" r="60" fill="#57e0c8" opacity="0.16"/>
+  <circle cx="372" cy="386" r="70" fill="#ff6b6b" opacity="0.16"/>
+  <!-- classical column (the polis) -->
+  <g fill="url(#gold)">
+    <!-- capital -->
+    <rect x="168" y="150" width="176" height="26" rx="6"/>
+    <rect x="150" y="176" width="212" height="20" rx="6"/>
+    <!-- fluted shaft -->
+    <rect x="186" y="200" width="22" height="150" rx="6"/>
+    <rect x="222" y="200" width="22" height="150" rx="6"/>
+    <rect x="258" y="200" width="22" height="150" rx="6"/>
+    <rect x="294" y="200" width="22" height="150" rx="6"/>
+    <!-- base -->
+    <rect x="150" y="354" width="212" height="20" rx="6"/>
+    <rect x="168" y="374" width="176" height="28" rx="6"/>
+  </g>
+  <!-- pediment -->
+  <path d="M256 96 L356 150 L156 150 Z" fill="url(#gold)"/>
+  <circle cx="256" cy="128" r="9" fill="#0a0a14"/>
+</svg>

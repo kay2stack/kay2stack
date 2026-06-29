@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="oc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7fe8e0"/>
+      <stop offset="0.5" stop-color="#39b6d8"/>
+      <stop offset="1" stop-color="#1f6fb2"/>
+    </linearGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c2c3a"/>
+      <stop offset="1" stop-color="#16465c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ring (open at lower-left where the river flows out) -->
+  <path d="M 120 360
+           A 200 200 0 1 1 180 420"
+        fill="none" stroke="url(#oc)" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- paddle blade: teardrop, pointing up-right -->
+  <path d="M 322 96
+           C 386 150 392 236 336 286
+           C 300 252 286 168 322 96 Z"
+        fill="url(#blade)" stroke="#f4fbff" stroke-width="12" stroke-linejoin="round"/>
+  <!-- blade spine -->
+  <path d="M 322 110 C 312 180 318 240 332 276" fill="none" stroke="#f4fbff" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- shaft: from blade down to lower-left -->
+  <path d="M 318 280 L 176 432" fill="none" stroke="#f4fbff" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- river 'S' ribbon -->
+  <path d="M 246 296
+           C 338 318 334 364 256 382
+           C 182 399 200 446 312 452"
+        fill="none" stroke="url(#oc)" stroke-width="30" stroke-linecap="round"/>
+</svg>
